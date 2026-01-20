@@ -1,6 +1,6 @@
 docker-compose down -v --remove-orphans
 docker-compose up -d --build
-echo "init.db"
+
 docker-compose cp sql/initdb.sh aiti_db:/tmp/initdb.sh
 docker-compose cp sql/users.sql aiti_db:/tmp/users.sql
 docker-compose cp sql/db.sql aiti_db:/tmp/db.sql
@@ -14,7 +14,7 @@ else
   docker-compose logs aiti_db
   exit 1
 fi
-echo "init.db done"
+
 sleep 1
 if curl -f http://localhost:8000/health > /dev/null 2>&1; then
     echo "Python сервис успешно запущен!"
