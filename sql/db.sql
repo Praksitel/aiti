@@ -1,0 +1,1 @@
+CREATE DATABASE aiti WITH OWNER aiti ENCODING='utf-8';
